@@ -5,6 +5,7 @@ import { Menu } from './menu/menu.model';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { MenuModule } from './menu/menu.module';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -20,7 +21,7 @@ import { ConfigModule } from '@nestjs/config';
     // models: [Menu],
     autoLoadModels: true,
     synchronize: true,
-  }), MenuModule
+  }), MenuModule, UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
